@@ -18,13 +18,13 @@ const MainMenu = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><a>Home</a></li>                        
-                    <li><a>Login</a></li>                        
-                    <li><a>Services</a></li> 
+                    <li><a className='font-semibold'>Home</a></li>                        
+                    <li><a className='font-semibold'>Login</a></li>                        
+                    <li><a className='font-semibold'>Services</a></li> 
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <a className="btn btn-secondary">Button</a>
             </div>
         </div>
     );
