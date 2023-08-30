@@ -1,10 +1,12 @@
 import React from 'react';
-import MainMenu from '../Pages/MainMenu/MainMenu';
+import { Outlet } from 'react-router-dom';
+import Header from '../Pages/Header/Header';
 
 const Main = () => {
     return (
         <div>
-            <MainMenu></MainMenu>
+            <Header></Header>
+            <Outlet></Outlet>
         </div>
     );
 };
