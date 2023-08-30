@@ -9,7 +9,7 @@ const Login = () => {
 
 
     return (
-        <div className="hero min-h-screen bg-base-200">
+        <div className="max-w-md m-auto min-h-screen">
             <div className="">
                 <div className="text-center pb-5">
                     <h1 className="text-4xl font-bold">Login now!</h1>
@@ -19,17 +19,17 @@ const Login = () => {
 
                     <form onSubmit={() => handleLogin()} className="card-body">
                         <div className="form-control">
-                            <label className="label">
+                            <label className="label mb-2 font-semibold">
                                 <span className="label-text">Email</span>
                             </label>
                             <input type="text" name='email' placeholder="email" className="input input-bordered" />
                         </div>
                         <div className="form-control">
-                            <label className="label">
+                            <label className="label mb-2 font-semibold">
                                 <span className="label-text">Password</span>
                             </label>
                             <input type="text" name='password' placeholder="password" className="input input-bordered" />
-                            <label className="label">
+                            <label className="label mt-2 font-semibold">
                                 <a href="#" className="label-text-alt link link-hover">Not Registered? <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </a>
                             </label>
                         </div>
