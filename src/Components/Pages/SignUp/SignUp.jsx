@@ -14,7 +14,6 @@ const SignUp = () => {
 
         }
     
-
     return (
         <div className="max-w-md m-auto py-5">
             <div className="">

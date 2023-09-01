@@ -28,7 +28,11 @@ const Header = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn btn-secondary">Button</a>
+                <div className="avatar placeholder">
+                    <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
+                        <span>MX</span>
+                    </div>
+                </div>
             </div>
         </div>
     );
