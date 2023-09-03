@@ -1,5 +1,5 @@
 import React, { Children, createContext } from 'react';
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth";
 import app from '../../firebase/firebase.config';
 
 
@@ -9,12 +9,17 @@ const auth = getAuth(app);
 
 const AuthProvider = ({Children}) => {
     const user = null;
-    
+
+    const provider = new GoogleAuthProvider();
+
     const createUser = createUserWithEmailAndPassword(auth, email, password);
 
     const authInfo = {
+        auth,
+        provider,
         user,
         createUser,
+       
 
     };
 

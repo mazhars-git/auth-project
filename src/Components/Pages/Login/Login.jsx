@@ -1,10 +1,23 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import AuthProvider from '../../../context/AuthProvider/AuthProvider';
+import { signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
+    const {auth, provider} = useContext(AuthProvider);
     
-    const handleLogin = (event) => {
-        event.preventDefault();
+    const handleLogin = (e) => {
+        e.preventDefault();
+    }
+
+    const handleGoogleLogin = (e) => {
+        signInWithPopup(auth, provider)
+        .then(result => {
+            const user = result.user;
+        })
+        .catch(error =>{
+            console.error('Error:', error.message);
+        })
     }
 
 
@@ -37,6 +50,10 @@ const Login = () => {
                             <button className="btn btn-primary">Login</button>
                         </div>
                     </form>
+
+                        <div className="form-control mt-6">
+                            <button onClick={handleGoogleLogin} className="btn btn-warning">Login With Google</button>
+                        </div>
 
                 </div>
             </div>
