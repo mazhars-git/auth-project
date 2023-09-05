@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
+    const  { createUser }  = useContext(AuthContext);
+    console.log(createUser);
+
     const handleSignUp = event => {
         event.preventDefault();
         const form = event.target;
@@ -12,7 +16,17 @@ const SignUp = () => {
         
         console.log(firstName, lastName, email, password);
 
-        }
+        createUser(email, password)
+        .then(result => {
+            const newUser = result.newUser;
+            console.log(newUser);
+        })
+        .catch(error => {
+            const errorMessage = error.message;
+            console.error(errorMessage);
+        })
+         
+    };
     
     return (
         <div className="max-w-md m-auto py-5">

@@ -1,13 +1,12 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
-import { signInWithPopup } from 'firebase/auth';
+import { GoogleAuthProvider, getAuth, signInWithPopup } from 'firebase/auth';
 
 const Login = () => {
+    const provider = new GoogleAuthProvider();
+    const auth = getAuth()
     
-    // const { signIn } = useContext(AuthContext);
-    // console.log(signIn);
-
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
@@ -23,9 +22,10 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
 
-        signInWithPopup()
+        signInWithPopup(auth, provider)
         .then(result => {
             const user = result.user;
+            
         })
         .catch(error =>{
             console.error('Error:', error.message);
