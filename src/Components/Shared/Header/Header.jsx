@@ -32,8 +32,8 @@ const Header = () => {
             </div>
             <div className="navbar-end">
                 <div className="avatar placeholder">
-                    <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-                        <span>{user.email}</span>
+                    <div className="bg-neutral-focus text-white text-2xl font-bold rounded-full w-12">
+                        <span>{user?.email.at(0)}</span>
                     </div>
                 </div>
             </div>
