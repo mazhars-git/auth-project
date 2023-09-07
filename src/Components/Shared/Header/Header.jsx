@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
+    
     const menuItems =
         <>
             <li className='font-semibold'><Link to='/'>Home</Link></li>
@@ -30,7 +33,7 @@ const Header = () => {
             <div className="navbar-end">
                 <div className="avatar placeholder">
                     <div className="bg-neutral-focus text-neutral-content rounded-full w-12">
-                        <span>MX</span>
+                        <span>{user.email}</span>
                     </div>
                 </div>
             </div>

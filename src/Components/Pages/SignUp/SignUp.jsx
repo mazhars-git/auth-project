@@ -25,6 +25,8 @@ const SignUp = () => {
             const errorMessage = error.message;
             console.error(errorMessage);
         })
+
+        form.reset();
          
     };
     
