@@ -18,7 +18,7 @@ const Header = () => {
             {
                 user ? 
                 <>
-                    <li onClick={handleLogout} className='font-semibold pt-2'>Logout</li>
+                    <li onClick={handleLogout} className='font-semibold p-2 ml-2 hover:bg-gray-200 rounded-md'>Logout</li>
                 </>
                 :
                 <li className='font-semibold'><Link to='login'>Login</Link></li>
