@@ -20,7 +20,6 @@ const Login = () => {
         .then(result => {
             console.log(result)
         })
-
     };
 
     const handleGoogleLogin = () => {
@@ -49,13 +48,14 @@ const Login = () => {
                             <label className="label mb-2 font-semibold">
                                 <span className="label-text">Email</span>
                             </label>
-                            <input type="text" name='email' placeholder="email" className="input input-bordered" />
+                            <input type="text" name='email' placeholder="email" className="input input-bordered" required />
                         </div>
                         <div className="form-control">
                             <label className="label mb-2 font-semibold">
                                 <span className="label-text">Password</span>
                             </label>
-                            <input type="text" name='password' placeholder="password" className="input input-bordered" />
+                            <input type="text" name='password' placeholder="password" className="input input-bordered" required />
+                            
                             <label className="label mt-2 font-semibold">
                                 <a href="#" className="label-text-alt link link-hover">Not Registered? <Link className='text-orange-600 font-bold' to="/signup">Sign Up</Link> </a>
                             </label>

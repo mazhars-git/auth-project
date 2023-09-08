@@ -14,7 +14,7 @@ const SignUp = () => {
         const email = form.email.value;
         const password = form.password.value;
         
-        console.log(firstName, lastName, email, password);
+        // console.log(firstName, lastName, email, password);
 
         createUser(email, password)
         .then(result => {
@@ -25,7 +25,6 @@ const SignUp = () => {
             const errorMessage = error.message;
             console.error(errorMessage);
         })
-
         form.reset();
          
     };
