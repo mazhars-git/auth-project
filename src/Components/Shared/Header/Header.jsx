@@ -3,13 +3,26 @@ import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogout = () => {
+        logOut()
+        .then(() => {})
+        .catch(error => console.log(error));
+    }
     
-    const menuItems =
+    const menuItems = 
         <>
             <li className='font-semibold'><Link to='/'>Home</Link></li>
-            <li className='font-semibold'><Link to='login'>Login</Link></li>
             <li className='font-semibold'><Link to='services'>Services</Link></li>
+            {
+                user ? 
+                <>
+                    <li onClick={handleLogout} className='font-semibold pt-2'>Logout</li>
+                </>
+                :
+                <li className='font-semibold'><Link to='login'>Login</Link></li>
+            }
         </>
 
     return (

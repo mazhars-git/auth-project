@@ -16,9 +16,15 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         
-        signIn(email, password)
+        signIn(auth, email, password)
         .then(result => {
             console.log(result)
+            const loggedInUser = result.loggedInUser;
+            console.log(loggedInUser);
+        })
+        .catch(error => {
+            const errorMessage = error.message;
+            console.log(errorMessage);
         })
     };
 
